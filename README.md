@@ -1,6 +1,6 @@
 # go-bitly
 
-a simple bit.ly client for go to easily shorten url's.
+a simple bit.ly client for go to easily shorten urls.
 
 ## usage
 
