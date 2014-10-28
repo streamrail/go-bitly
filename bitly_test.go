@@ -26,16 +26,23 @@ func TestBitly(t *testing.T) {
 
 	bitlyClient := NewClient(*token)
 
-	var testUrl = "https://www.google.com/"
+	var testUrl = "https://github.com/streamrail/go-bitly"
 
 	if shortUrl, err := bitlyClient.Shorten(testUrl); err != nil {
 		t.Error(err.Error())
 	} else {
 		c := make(chan bool, 1)
 		client := &http.Client{CheckRedirect: func(req *http.Request, via []*http.Request) error {
-			if via[len(via)-1].URL.String() == testUrl {
+			if req.URL.String() == testUrl {
 				c <- true
+				return nil
 			}
+			for _, v := range via {
+				if v.URL.String() == testUrl {
+					c <- true
+				}
+			}
+
 			return nil
 		}}
 		req, err := http.NewRequest("GET", string(shortUrl), nil)

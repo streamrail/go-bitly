@@ -32,7 +32,7 @@ func TestBitly(t *testing.T) {
 
 	bitlyClient := bitly.NewClient(*token)
 
-	var testUrl = "https://www.google.com/"
+	var testUrl = "https://github.com/streamrail/go-bitly"
 
 	if shortUrl, err := bitlyClient.Shorten(testUrl); err != nil {
 		t.Error(err.Error())
@@ -45,7 +45,7 @@ func TestBitly(t *testing.T) {
 
 ## run tests
 
-In order to run the tests, you must *set your auth token*. The tests work by requesting bit.ly to shorten "https://www.google.com/". Then we try to http GET the shortURl, and we follow the redirect chain for 10 seconds. During those 10 seconds, if we got the original URL, we send it on a channel and the test passes.
+In order to run the tests, you must *set your auth token*. The tests work by requesting bit.ly to shorten "https://github.com/streamrail/go-bitly". Then we try to http GET the shortURl, and we follow the redirect chain for 10 seconds. During those 10 seconds, if we got the original URL, we send it on a channel and the test passes.
 
 ## License
 
