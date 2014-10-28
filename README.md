@@ -30,7 +30,7 @@ func TestBitly(t *testing.T) {
 		t.Error("required flag: token")
 	}
 
-	bitlyClient := NewClient(*token)
+	bitlyClient := bitly.NewClient(*token)
 
 	var testUrl = "https://www.google.com/"
 

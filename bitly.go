@@ -1,4 +1,4 @@
-package main
+package bitly
 
 import (
 	"encoding/json"
