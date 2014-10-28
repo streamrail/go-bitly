@@ -1,4 +1,4 @@
-# go-bitly
+# go-bitly [![Circle CI](https://circleci.com/gh/streamrail/go-bitly.png?style=badge)](https://circleci.com/gh/streamrail/go-bitly)
 
 a simple bit.ly client for go to easily shorten urls.
 
